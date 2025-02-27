@@ -126,7 +126,7 @@
 .card_button {
   display: flex;
   justify-content: end;
-  gap: 8px;
+  gap: 6px;
   padding-right: 25px;
   padding-bottom: 25px;
 }
@@ -175,6 +175,7 @@
   align-self: center;
   gap: 9px;
   padding: 15px 20px;
+  color: var(--bg_color, #fff);
 }
 
 .save_image {
@@ -182,7 +183,7 @@
   block-size: 21px;
   position: relative;
   z-index: 1;
-  /*mix-blend-mode: difference; */
+  mix-blend-mode: difference;
 }
 
 .button__text {
