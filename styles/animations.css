@@ -12,10 +12,12 @@
 @keyframes heart {
   from {
     scale: 1;
+    transform-origin: center;
   }
 
   to {
     scale: 1.25;
+    transform-origin: center;
   }
 }
 
@@ -55,14 +57,6 @@
 
 .sparks {
   opacity: 0;
-}
-
-.card__icon-button:focus {
-  outline: none;
-}
-
-.card__icon-button:focus-visible {
-  border-color: var(--accent_color, #000);
 }
 
 .button:focus {
