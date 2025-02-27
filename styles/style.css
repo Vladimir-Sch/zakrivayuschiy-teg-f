@@ -1,16 +1,274 @@
-/* Здесь вы напишете основную часть стилей страницы.
-
-Будьте внимательны! Для корректной работы скриптов на этом сайте нужно, чтобы в HTML некоторые классы были названы особым образом:
+/* 
+Для корректной работы скриптов на этом сайте нужно, чтобы в HTML некоторые классы были названы особым образом:
 ✦ like-icon — для svg-иконки анимированного сердца
 ✦ card__like-button — для кнопки Like рядом с иконкой
 ✦ card__icon-button — для кнопки, оборачивающей иконку
-✦ card__icon-button — для кнопки, оборачивающей иконку
 ✦ is-liked — для обозначения состояния лайкнутой иконки в виде сердца
 ✦ button__text — для обозначения текстового элемента внутри кнопки
-
 */
 
 .page {
   min-inline-size: 320px;
   min-block-size: 100dvb;
+  font-family: var(--main_font, sans-serif);
+  font-variation-settings: "wght" var(--text_weight, 400);
+  color: var(--text_color);
+  background-image: var(--bg_image);
+  background-size: cover;
+  background-attachment: fixed;
+  background-color: var(--bg_color);
+  display: grid;
+  justify-items: center;
+  gap: 100px;
+  padding-top: 100px;
+  padding-bottom: 100px;  
+}
+
+
+.header {
+  font-family: var(--accent_font);
+  background-color: var(--bg_color);
+  border: 2px solid #000;
+  inline-size: var(--section_size);
+}
+
+.header_text {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding-block: clamp(7.5rem, 6.9231rem + 2.4615vw, 8rem);
+}
+
+.header_title {
+  align-self: center;
+  font-size: clamp(3.0625rem, 1.9087rem + 4.9231vw, 4.0625rem);
+  text-transform: uppercase;
+}
+
+.header_sub {
+  align-self: center;
+  font-size: clamp(0.875rem, 0.226rem + 2.7692vw, 1.4375rem);
+  text-transform: uppercase;
+}
+
+/* Cards */
+
+.card_list {
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  border: 2px solid var(--accent_color, #000);
+  background-color: var(--bg_color);
+  inline-size: var(--section_size);
+}
+
+.card_title {
+  padding: 5px 10px 4.5px;
+  font-size: 18px;
+  line-height: 21.78px;
+  font-variation-settings: "wght" var(--title_weight, 700);
+  text-align: left;
+}
+
+.card_image_container {
+  position: relative;
+  border-block: 2px solid var(--accent_color, #000);
+}
+
+.card_image {
+  display: block;
+  inline-size: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+.card_label {
+  position: absolute;
+  top: 23px;
+  right: 25px;
+  font-family: var(--accent_font);
+  font-size: 14px;
+  line-height: 14px;
+  opacity: 0.5;
+  text-shadow: 1px var(--bg_color);
+  mix-blend-mode: hard-light;
+}
+
+@supports (
+  (text-stroke: 1px var(--bg_color, #fff)) or
+  (-webkit-text-stroke: 1px var(--bg_color, #fff))
+  ) {
+  .card_label {
+    -webkit-text-stroke: 1px var(--bg_color);
+    text-stroke: 1px var(--bg_color);
+    text-shadow: none;
+  }
+}
+
+.card_text {
+  display: flex;
+  flex-direction: column;
+  gap: 27px;
+  padding: 25px;
+  line-height: 21px;
+  font-size: 18px;
+}
+
+.card_button {
+  display: flex;
+  justify-content: end;
+  gap: 8px;
+  padding-right: 25px;
+  padding-bottom: 25px;
+}
+
+.card__like-button {
+  inline-size: 130px;
+  block-size: 38px;
+}
+
+.button {
+  position: relative;
+  border: 2px solid var(--accent_color, #000);
+  background-color: var(--bg_color, #fff);
+  outline: none;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+.card__icon-button {
+  padding: 0;
+  outline: none;
+  border: 2px solid transparent;
+  background-color: transparent;
+  inline-size: 39px;
+  block-size: 38px;
+}
+
+.card__icon-button:focus {
+  outline: none;
+}
+
+.card__icon-button:focus-visible {
+  outline: 2px solid var(--border-color, #000);
+  outline-offset: -2px;
+  transition: border 0.3s ease;
+}
+
+.like-icon {
+  cursor: pointer;
+}
+
+.button__text {
+  mix-blend-mode: difference;
+  font-family: var(--accent_font);
+  font-size: 14px;
+  line-height: 12.6px;
+  color: var(--bg_color);
+  }
+
+.filter_grayscale {
+  filter: grayscale(0.9);
+}
+
+.filter_saturate {
+  filter: saturate(150%);
+}
+
+.filter_sepia {
+  filter: sepia(90%);
+}
+
+.filter_invert {
+  filter: invert(0.7);
+}
+
+.filter_contrast {
+  filter: contrast(1.25);
+}
+
+.filter_blur {
+  filter: blur(5px);
+}
+
+.filter_multi {
+  filter: contrast(2) brightness(80%) sepia(1);
+}
+
+.card_save_button {
+  display: flex;
+  align-items: center;
+  align-self: center;
+  gap: 9px;
+  padding: 15px 20px;
+}
+
+.save_image {
+  color: currentColor;
+  inline-size: 21px;
+  block-size: 21px;
+}
+
+.dialog {
+  inline-size: clamp(21.3125rem, 21.0484rem + 1.1268vw, 22.0625rem);
+}
+
+.dialog[open] {
+  display: grid;
+  grid-template-columns: min-content 1fr;
+  justify-items: center;
+  align-items: center;
+  gap: 20px;
+  padding: 30px;
+}
+
+.dialog::backdrop {
+  background-color: rgb(0 0 0 / 0.75);
+}
+
+.dialog_image {
+  inline-size: 39px;
+  block-size: 39px;
+}
+
+.dialog_title {
+  font-family: var(--accent_font);
+  font-size: 14px;
+  line-height: 21px;
+  text-transform: uppercase;
+}
+
+.dialog_button_close {
+  grid-column: span 2;
+  inline-size: 100%;
+  padding-block: 8px;
+  padding-top: 13px;
+  text-transform: uppercase;
+}
+
+@media (width <= 375px) {
+  .card_title {
+    padding: 4px 10px 5px;
+  }
+
+  .card_label {
+    right: 11px;
+  }
+
+  .card_save_button {
+    flex-direction: column;
+  }
+
+  .save_image {
+    inline-size: 28px;
+    block-size: 28px;
+  }
+  .dialog[open] {
+    gap: 30px;
+  }
 }
