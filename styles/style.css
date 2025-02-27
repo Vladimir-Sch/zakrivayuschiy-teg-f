@@ -21,9 +21,8 @@
   justify-items: center;
   gap: 100px;
   padding-top: 100px;
-  padding-bottom: 100px;  
+  padding-bottom: 100px;
 }
-
 
 .header {
   font-family: var(--accent_font);
@@ -101,8 +100,8 @@
 
 @supports (
   (text-stroke: 1px var(--bg_color, #fff)) or
-  (-webkit-text-stroke: 1px var(--bg_color, #fff))
-  ) {
+    (-webkit-text-stroke: 1px var(--bg_color, #fff))
+) {
   .card_label {
     -webkit-text-stroke: 1px var(--bg_color);
     text-stroke: 1px var(--bg_color);
@@ -170,7 +169,7 @@
   font-size: 14px;
   line-height: 12.6px;
   color: var(--bg_color);
-  }
+}
 
 .filter_grayscale {
   filter: grayscale(0.9);

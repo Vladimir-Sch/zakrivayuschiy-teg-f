@@ -12,10 +12,10 @@
 @keyframes heart {
   from {
     scale: 1;
- }
+  }
 
   to {
-    scale: 1.25;  
+    scale: 1.25;
   }
 }
 
@@ -123,8 +123,3 @@
 .like-icon.is-liked .sparks {
   animation: sparks 0.3s ease-in 0.3s 1;
 }
-
-
-
-
-
